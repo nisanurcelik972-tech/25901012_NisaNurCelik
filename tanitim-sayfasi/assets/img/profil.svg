@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="440" viewBox="0 0 440 440" role="img" aria-label="NÇ harfli profil görseli">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2a43"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="440" height="440" fill="url(#g)"/>
+  <path d="M220 70 L330 112 V210 C330 275 285 322 220 350 C155 322 110 275 110 210 V112 Z" fill="none" stroke="#ffffff" stroke-width="10" opacity="0.35"/>
+  <text x="220" y="250" font-family="Georgia, serif" font-size="120" font-weight="700" fill="#ffffff" text-anchor="middle">NÇ</text>
+</svg>
