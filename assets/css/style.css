@@ -1,0 +1,322 @@
+/* Açık temanın renklerini ve ortak değerleri değişken olarak tanımlar */
+:root {
+  --arka: #eef2f6;
+  --kart: #ffffff;
+  --yazi: #101a2b;
+  --ust: #0f2a43;
+  --ust-yazi: #ffffff;
+  --vurgu: #0f766e;
+  --link: #0b5c8f;
+  --kenar: #b8c4d4;
+  --tablo-baslik: #dbe6f2;
+  --dugme: #0f2a43;
+  --dugme-yazi: #ffffff;
+  --hata: #b00020;
+  --basari: #17653a;
+}
+
+/* Koyu temanın renkleri: main.js bu sınıfı body etiketine ekler ve kaldırır */
+.koyu-tema {
+  --arka: #0b1320;
+  --kart: #131e30;
+  --yazi: #e6edf6;
+  --ust: #060d18;
+  --vurgu: #5eead4;
+  --link: #7dd3fc;
+  --kenar: #34445f;
+  --tablo-baslik: #1f2e47;
+  --dugme: #5eead4;
+  --dugme-yazi: #07121f;
+  --hata: #ffb4ab;
+  --basari: #86efac;
+}
+
+/* Tüm öğelerde kutu boyutunu padding ve kenarlık dahil hesaplar */
+* {
+  box-sizing: border-box;
+}
+
+/* Sayfanın genel yazı tipi, rengi ve arka planı */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--yazi);
+  background-color: var(--arka);
+}
+
+/* Üst bölüm: ad ve tema düğmesini Flexbox ile yan yana dizer */
+.ust-alan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
+  color: var(--ust-yazi);
+  background-color: var(--ust);
+  border-left: 10px solid var(--vurgu);
+}
+
+/* Ana başlık (ad soyad) */
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  line-height: 1.15;
+}
+
+/* Başlığın altındaki bölüm bilgisi */
+.alt-baslik {
+  margin: 0.4rem 0 0;
+  color: #cfe3f5;
+}
+
+/* Tema düğmesi: başlık alanında beyaz zemin üzerine koyu yazı */
+#tema-dugmesi {
+  padding: 0.6rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f2a43;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Menü çubuğunun arka planı ve alt çizgisi */
+nav {
+  background-color: var(--kart);
+  border-bottom: 2px solid var(--kenar);
+}
+
+/* Menü listesi: bağlantıları Flexbox ile yan yana dizer */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  list-style: none;
+}
+
+/* Tüm bağlantıların rengi ve altı çizgisi */
+a {
+  color: var(--link);
+  text-underline-offset: 3px;
+}
+
+/* Fare ile üzerine gelinen bağlantıyı belirginleştirir */
+a:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* Klavye ile gezinirken odaklanan öğeyi görünür yapar */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--vurgu);
+  outline-offset: 3px;
+}
+
+/* Ana içerik alanının genişliği ve kenar boşlukları */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Her bölümün kart görünümü */
+.kart {
+  margin-bottom: 1.5rem;
+  padding: 1.75rem;
+  background-color: var(--kart);
+  border: 1px solid var(--kenar);
+  border-radius: 10px;
+}
+
+/* Bölüm başlıkları (h2) */
+h2 {
+  margin-top: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  border-bottom: 3px solid var(--vurgu);
+  padding-bottom: 0.4rem;
+}
+
+/* Alt başlıklar (h3) */
+h3 {
+  margin-top: 1.75rem;
+  font-size: 1.2rem;
+}
+
+/* Hakkımda bölümü: görsel ve metni Grid ile yan yana dizer */
+.hakkimda-duzen {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+/* Görseller kutusundan taşmaz */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--kenar);
+}
+
+/* Tablo çok genişlerse sadece kendi kutusu içinde kayar */
+.tablo-kutusu {
+  overflow-x: auto;
+}
+
+/* Tablonun genel görünümü */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Tablo başlık ve veri hücreleri */
+th,
+td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  border: 1px solid var(--kenar);
+}
+
+/* Tablo başlık hücrelerinin arka planı */
+th {
+  background-color: var(--tablo-baslik);
+}
+
+/* Liste öğeleri arasındaki boşluk */
+li {
+  margin-bottom: 0.3rem;
+}
+
+/* Form alanlarının etiketleri */
+label {
+  display: block;
+  margin: 1rem 0 0.35rem;
+  font-weight: 600;
+}
+
+/* Form giriş alanları ve mesaj kutusu */
+input,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--yazi);
+  background-color: var(--arka);
+  border: 2px solid var(--kenar);
+  border-radius: 6px;
+}
+
+/* Gönder düğmesi */
+form button {
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dugme-yazi);
+  background-color: var(--dugme);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Uyarı ve teşekkür yazılarının yazıldığı alan */
+#mesaj-alani {
+  min-height: 1.6rem;
+  margin: 1rem 0 0;
+  font-weight: 600;
+}
+
+/* Hata uyarısının rengi (main.js ekler) */
+.hata {
+  color: var(--hata);
+}
+
+/* Başarılı gönderim mesajının rengi (main.js ekler) */
+.basari {
+  color: var(--basari);
+}
+
+/* Sayfanın alt bilgi alanı */
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--yazi);
+  border-top: 2px solid var(--kenar);
+}
+
+/* 600 piksel ve altındaki ekranlar için düzen değişiklikleri */
+@media (max-width: 600px) {
+  /* Üst alan: başlık ve düğme alt alta dizilir */
+  .ust-alan {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Başlık küçük ekranda daha küçük yazılır */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Menü bağlantıları alt alta dizilir */
+  .menu {
+    flex-direction: column;
+  }
+
+  /* Hakkımda bölümü tek sütuna düşer */
+  .hakkimda-duzen {
+    grid-template-columns: 1fr;
+  }
+
+  /* Kart iç boşluğu küçülür */
+  .kart {
+    padding: 1.1rem;
+  }
+
+  /* Tablo yazısı küçülür, taşma olmaz */
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Profil görseli ve bilgi kutuları */
+.profil-sol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+.profil-sol img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+}
+.profil-bilgileri {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.profil-bilgileri p {
+  margin: 0;
+  padding: 0.8rem;
+  background-color: #eaf3f5;
+  color: #102a43;
+  border-left: 4px solid #008577;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+body.koyu-tema .profil-bilgileri p {
+  background-color: #243449;
+  color: #ffffff;
+  border-left: 4px solid #20bfa9;
+}
